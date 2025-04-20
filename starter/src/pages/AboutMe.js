@@ -213,7 +213,7 @@ Whether it's frontend design or backend architecture, I love the challenge of cr
         <div className="flex items-center gap-4 mt-2">
         <button className=" flex flex-row gap-2 bg-[#007EE3] text-white py-2 px-6 lg:text-[24px] text-[15px] font-medium border-2 border-transparent relative z-10 overflow-hidden transition-all duration-500 hover:text-black hover:border-bluish before:content-[''] before:absolute before:inset-0 before:bg-white before:z-[-1] before:scale-x-0 hover:before:scale-x-100 before:origin-left before:transition-transform before:duration-500 rounded-md">
             <FaGithub className='lg:text-[30px] text-[21px]'/>
-            <a href='https://github.com/abhishek13712/Shopping-cart'>Link</a>
+            <a href='https://github.com/Sameery-04/Shopping-cart'>Link</a>
             
           </button>
           {/* <a href="#" aria-label="GitHub Link">
@@ -274,7 +274,7 @@ Whether it's frontend design or backend architecture, I love the challenge of cr
         <div className="flex items-center gap-4 mt-2">
         <button className=" flex flex-row gap-2 bg-[#007EE3] text-white py-2 px-6 lg:text-[24px] text-[15px] font-medium border-2 border-transparent relative z-10 overflow-hidden transition-all duration-500 hover:text-black rounded-md hover:border-bluish before:content-[''] before:absolute before:inset-0 before:bg-white before:z-[-1] before:scale-x-0 hover:before:scale-x-100 before:origin-left before:transition-transform before:duration-500">
             <FaGithub className='lg:text-[30px] text-[21px]'/>
-            <a href='https://github.com/abhishek13712/Shopping-cart'>Link</a>
+            <a href='https://github.com/Sameery-04/Weather-'>Link</a>
             
           </button>
           {/* <a href="#" aria-label="GitHub Link">
@@ -336,7 +336,7 @@ Whether it's frontend design or backend architecture, I love the challenge of cr
         <div className="flex items-center gap-4 mt-2">
         <button className=" flex flex-row gap-2 bg-[#007EE3] text-white py-2 px-6 lg:text-[24px] text-[15px] font-medium border-2 border-transparent relative z-10 overflow-hidden transition-all duration-500 hover:text-black hover:border-bluish before:content-[''] before:absolute before:inset-0 before:bg-white before:z-[-1] before:scale-x-0 hover:before:scale-x-100 before:origin-left before:transition-transform before:duration-500 rounded-md">
             <FaGithub className='lg:text-[30px] text-[21px]'/>
-            <a href='https://github.com/abhishek13712/Shopping-cart'>Link</a>
+            <a href='https://github.com/Sameery-04/Games-of-Knapsack'>Link</a>
             
           </button>
           {/* <a href="#" aria-label="GitHub Link">
