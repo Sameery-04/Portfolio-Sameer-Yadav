@@ -371,7 +371,9 @@ function Skills() {
                      {/* <FaGithub className="relative top-1 text-[40px]"/> */}
                      </div>
                     
+                     <a target='blank' href='https://drive.google.com/file/d/1OVY6lI_qb7LOmOSRs8IX-yEIge4w9YMr/view?usp=sharing'>
                      <div className=" text-[30px]"><p>RESUME</p></div>
+                     </a>
                     
                    </div>
                   
