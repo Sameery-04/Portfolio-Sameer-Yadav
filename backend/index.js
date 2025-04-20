@@ -9,7 +9,7 @@ const dotenv = require("dotenv");
 const cors = require('cors');
 const allowedOrigins = [
 	"http://localhost:3002",  // local frontend
-	"https://portfolio-abhishek-kumar-front-git-2a22f9-aks-projects-dc81922d.vercel.app"  // deployed frontend
+	"https://portfolio-sameer-yadav.vercel.app/" // deployed frontend
   ];
   
 
