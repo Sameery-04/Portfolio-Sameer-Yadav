@@ -52,7 +52,7 @@ Welcome to my portfolio showcasing my projects and skills!</p>
          
          {/* message */}
          <div className='w-full opacity-90  bg-[#007EE3] bg-opacity-90 relative mt-6'>
-         <div  className=' absolute top-[13%] left-[21%]'>
+         <div  className=' absolute top-[13%] lg:left-[21%] md:-left-10'>
         <img src="https://cdn.prod.website-files.com/5c15cd8c8f69207532f75856/5c15cd8c8f6920262ff7594c_quote-icon-white.svg" className='opacity-90'/>         
           </div>
          <div className='w-1/2 mt-10 mb-10  mx-auto text-[12px] text-white py-6 opacity-90  lg:w-1/2  lg:text-xl'>It’s often tempting to follow the crowd, especially when everyone around us seems to be moving in the same direction. But true growth comes from carving out our own path and making choices that align with our personal journey. The way we prioritize our time, the mistakes we make, and the lessons we learn along the way all contribute to who we become. While social pressures, generational norms, and timing can impact our decisions, the final choice is always ours. In the end, we’re the ones taking the last shot—and that sense of responsibility is what drives our personal development.</div>

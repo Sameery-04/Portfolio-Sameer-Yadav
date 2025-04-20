@@ -327,7 +327,7 @@ const Resume="https://res.cloudinary.com/dxyygkfd9/image/upload/v1744985928/Resu
 
 function Skills() {
   return (
-    <div className='flex flex-col  relative  overflow-hidden md:w-1/2 w-full'>
+    <div className='flex flex-col  relative  overflow-hidden lg:w-1/2 w-full'>
      <div className='w-full flex  ml-8 text-5xl mt-20'>
          <div>Skills</div>
      </div>

@@ -150,27 +150,43 @@ import { NavLink } from 'react-router-dom';
 import { IoMdSend } from "react-icons/io";
 import { MdMyLocation } from "react-icons/md";
 import { CiMail } from "react-icons/ci";
+import { useState } from 'react';
+import toast from 'react-hot-toast';
+import { useCallback } from 'react';
 const images= "https://res.cloudinary.com/dxyygkfd9/image/upload/v1744997995/Contactus1_hdkqfd.jpg";
 const ContactUs = () => {
   const [message,setMessage]=useState({
-    name:"",
-    email:"",
-    subject:"",
-    message:""
+    Name:"",
+    Email:"",
+    Subject:"",
+    Message:""
   })
 
-  const changeHandler=(e)=>{
+  const changeHandler = useCallback((e) => {
     setMessage({
       ...message,
-      [e.target.name]:e.target.value,
-    })
-  }
+      [e.target.name]: e.target.value,
+    });
+  }, [message]);
 
+  const validateEmail = (email) => {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+    return regex.test(email);
+  };
+  
 
   const sendEmail = async (e) => {
     e.preventDefault();
+    toast.loading("Sending message...");
+
+    if (!validateEmail(message.Email)) {
+      toast.dismiss(); 
+      toast.error("Please enter a valid email address.");
+      return;
+    }
+    
     try {
-      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/send-message`, {
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/v1/contact/getcontact`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -178,9 +194,20 @@ const ContactUs = () => {
         body: JSON.stringify(message),
       });
 
-      const data = await response.json();
-      alert(data.status);
+      // const data = await response.json();
+      // alert(data.status);
+      setMessage({
+        Name: "",
+        Email: "",
+        Subject: "",
+        Message: ""
+      });
+      toast.dismiss(); 
+      toast.success("Message sent successfully!")
+      
     } catch (err) {
+      toast.dismiss(); 
+      toast.error("Something went wrong. Please try again.");
       console.error('Error sending email:', err);
     }
   };
@@ -200,24 +227,24 @@ const ContactUs = () => {
       <form onSubmit={sendEmail} className="space-y-6 mb-8 pl-8">
       <div className="mt-[30px] w-full flex flex-col md:flex-row gap-4 md:gap-8">
                {/* name */}
-              <input
-    type="text"
-    id="name"
-    name="name"
-    value={message.name}
-    onChange={changeHandler}
-    placeholder="Enter your name"
+                <input
+                type="text"
+                id="name"
+                name="Name"
+                value={message.Name}
+                onChange={changeHandler}
+                placeholder="Enter your Name"
                 className="pt-[20px] pb-[7px] pl-[8px] flex-1 border-b-2 focus:outline-none pr-2 focus:border-b-red-500 w-full"
                 required
               />
               {/* email */}
               <input
                  type="email"
-    id="email"
-    name="email"
-    value={message.email}
-    onChange={changeHandler}
-    placeholder="Enter your email"
+                id="email"
+                name="Email"
+                value={message.Email}
+                onChange={changeHandler}
+                placeholder="Enter your Email"
                 className="pt-[20px] pb-[7px] pl-[8px] flex-1 border-b-2 focus:outline-none focus:border-b-red-500 w-full"
                 required
               />
@@ -226,21 +253,23 @@ const ContactUs = () => {
       
       <div className="w-full">
       {/* <label for="name">Subject:</label> */}
-      <input type="text"
-       id="subject"
-        name="subject"
-        value={message.subject}
-       onChange={changeHandler}
+        <input type="text"
+        id="subject"
+        name="Subject"
+        value={message.Subject}
+        onChange={changeHandler}
+        placeholder="Enter your Subject"
         className="pt-[20px] pb-[7px] pl-[8px] w-full border-b-2 focus:outline-none  focus:border-red-500 focus:transition-colors focus:duration-600 focus:ease-in-out" required/>
       </div>
 
       {/* <label for="message">Message:</label><br/> */}
       <textarea id="message"
-       name="message" 
-       value={message.message}
-       onChange={changeHandler}
-       rows="5" 
-       cols="40" 
+        name="Message" 
+        value={message.Message}
+        onChange={changeHandler}
+        rows="5" 
+        cols="40" 
+        placeholder="Enter your Message here..."
         className="pt-[20px] pl-[8px] w-full border-b-2 focus:outline-none focus:border-b-red-500 " required></textarea>
 
       {/* <div className="w-full border-2"> */}
